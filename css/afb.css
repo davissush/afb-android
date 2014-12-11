@@ -1,0 +1,969 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@media all {
+  .featherlight {
+    display: none;
+    /* dimensions: spanning the background from edge to edge */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    /* position: centering content */
+    text-align: center;
+    /* insures that the ::before pseudo element doesn't force wrap with fixed width content; */
+    white-space: nowrap;
+    /* styling */
+    cursor: pointer;
+    background: #333;
+    /* IE8 "hack" for nested featherlights */
+    background: transparent;
+  }
+
+  /* support for nested featherlights. Does not work in IE8 (use JS to fix) */
+  .featherlight:last-of-type {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .featherlight:before {
+    /* position: trick to center content vertically */
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+  }
+
+  .featherlight .featherlight-content {
+    /* make content container for positioned elements (close button) */
+    position: relative;
+    /* position: centering vertical and horizontal */
+    text-align: left;
+    vertical-align: middle;
+    display: inline-block;
+    /* dimensions: cut off images */
+    overflow: auto;
+    padding: 25px 25px 0;
+    border-bottom: 25px solid transparent;
+    /* dimensions: handling small or non existing (loading images) content */
+    min-width: inherit;
+    /* dimensions: handling large content */
+    margin-left: 5%;
+    margin-right: 5%;
+    max-height: 95%;
+    /* styling */
+    background: #fff;
+    cursor: auto;
+    /* reset white-space wrapping */
+    white-space: normal;
+    max-width: 600px;
+    min-width: 309px;
+  }
+
+  /* contains the content */
+  .featherlight .featherlight-inner {
+    /* make sure its visible */
+    display: block;
+  }
+
+  .featherlight .featherlight-close-icon {
+    /* position: centering vertical and horizontal */
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    /* dimensions: 25px x 25px */
+    line-height: 25px;
+    width: 25px;
+    /* styling */
+    cursor: pointer;
+    text-align: center;
+    font: Arial, sans-serif;
+    background: #fff;
+    /* Set the background in case it overlaps the content */
+    background: rgba(255, 255, 255, 0.3);
+    color: #000;
+  }
+
+  .featherlight .featherlight-image {
+    /* styling */
+    width: 100%;
+  }
+
+  .featherlight-iframe .featherlight-content {
+    /* removed the border for image croping since iframe is edge to edge */
+    border-bottom: 0;
+    padding: 0;
+  }
+
+  .featherlight iframe {
+    /* styling */
+    border: none;
+  }
+}
+/* handling phones and small screens */
+@media only screen and (max-width: 1024px) {
+  .featherlight .featherlight-content {
+    /* dimensions: maximize lightbox with for small screens */
+    margin-left: 10px;
+    margin-right: 10px;
+    max-height: 98%;
+    padding: 10px 10px 0;
+    border-bottom: 10px solid transparent;
+  }
+}
+.lightbox h1 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+.lightbox select {
+  height: 50px;
+  width: 100%;
+}
+.lightbox .FormRow {
+  margin-bottom: 10px;
+}
+
+.featherlight .PopupWrapper {
+  background-color: #F2F2F2;
+  padding: 0px 20px 20px;
+  overflow: hidden;
+}
+.featherlight .PopupWrapper .PopupMessage {
+  font-size: 1.2em;
+  padding: 20px 0;
+}
+.featherlight .PopupWrapper .PopupAction {
+  text-align: center;
+}
+.featherlight .PopupWrapper .HeaderRow {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.featherlight .PopupWrapper h3 {
+  margin-bottom: 10px;
+}
+.featherlight .PopupWrapper .Col {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  width: 65%;
+  padding-right: 20px;
+}
+.featherlight .PopupWrapper .Col img {
+  width: 100%;
+  min-width: 135px;
+  max-width: 226px;
+}
+.featherlight .PopupWrapper .Col.Right {
+  width: 35%;
+  text-align: right;
+}
+.featherlight .PopupWrapper .Col.Right img {
+  width: 100%;
+  min-width: 105px;
+  max-width: 120px;
+}
+.featherlight .PopupWrapper .ResultSection {
+  overflow: hidden;
+  background-color: #FFFFFF;
+  padding: 20px;
+}
+.featherlight .PopupWrapper .MessageSection {
+  background-color: #CCCCCC;
+  padding: 20px;
+}
+.featherlight .PopupWrapper .Action {
+  padding: 20px 0;
+  text-align: right;
+}
+.featherlight .PopupWrapper ul.Labels {
+  font-weight: bold;
+}
+.featherlight .PopupWrapper ul li {
+  margin-bottom: 10px;
+}
+
+@media all {
+  .featherlight-image {
+    display: none;
+    /* dimensions: spanning the background from edge to edge */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    /* position: centering content */
+    text-align: center;
+    /* insures that the ::before pseudo element doesn't force wrap with fixed width content; */
+    white-space: nowrap;
+    /* styling */
+    cursor: pointer;
+    background: #333;
+    /* IE8 "hack" for nested featherlights */
+    background: transparent;
+  }
+
+  /* support for nested featherlights. Does not work in IE8 (use JS to fix) */
+  .featherlight-image:last-of-type {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .featherlight-image:before {
+    /* position: trick to center content vertically */
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+  }
+
+  .featherlight-image .featherlight-image-content {
+    /* make content container for positioned elements (close button) */
+    position: relative;
+    /* position: centering vertical and horizontal */
+    text-align: left;
+    vertical-align: middle;
+    display: inline-block;
+    /* dimensions: cut off images */
+    overflow: auto;
+    padding: 25px 25px 0;
+    border-bottom: 25px solid transparent;
+    /* dimensions: handling small or non existing (loading images) content */
+    min-width: inherit;
+    /* dimensions: handling large content */
+    margin-left: 5%;
+    margin-right: 5%;
+    max-height: 95%;
+    /* styling */
+    background: #fff;
+    cursor: auto;
+    /* reset white-space wrapping */
+    white-space: normal;
+    max-width: 600px;
+    min-width: 309px;
+  }
+
+  /* contains the content */
+  .featherlight-image .featherlight-image-inner {
+    /* make sure its visible */
+    display: block;
+  }
+
+  .featherlight-image .featherlight-image-close-icon {
+    /* position: centering vertical and horizontal */
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    /* dimensions: 25px x 25px */
+    line-height: 25px;
+    width: 25px;
+    /* styling */
+    cursor: pointer;
+    text-align: center;
+    font: Arial, sans-serif;
+    background: #fff;
+    /* Set the background in case it overlaps the content */
+    background: rgba(255, 255, 255, 0.3);
+    color: #000;
+  }
+
+  .featherlight-image .featherlight-image-image {
+    /* styling */
+    width: 100%;
+  }
+
+  .featherlight-image-iframe .featherlight-image-content {
+    /* removed the border for image croping since iframe is edge to edge */
+    border-bottom: 0;
+    padding: 0;
+  }
+
+  .featherlight-image iframe {
+    /* styling */
+    border: none;
+  }
+}
+/* handling phones and small screens */
+@media only screen and (max-width: 1024px) {
+  .featherlight-image .featherlight-image-content {
+    /* dimensions: maximize lightbox with for small screens */
+    margin-left: 10px;
+    margin-right: 10px;
+    max-height: 98%;
+    padding: 10px 10px 0;
+    border-bottom: 10px solid transparent;
+  }
+}
+.lightbox h1 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+.lightbox select {
+  height: 50px;
+  width: 100%;
+}
+.lightbox .FormRow {
+  margin-bottom: 10px;
+}
+
+.featherlight-image .PopupWrapper {
+  background-color: #F2F2F2;
+  padding: 0px 20px 20px;
+  overflow: hidden;
+}
+.featherlight-image .PopupWrapper .PopupMessage {
+  font-size: 1.2em;
+  padding: 20px 0;
+}
+.featherlight-image .PopupWrapper .PopupAction {
+  text-align: center;
+}
+.featherlight-image .PopupWrapper .HeaderRow {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.featherlight-image .PopupWrapper h3 {
+  margin-bottom: 10px;
+}
+.featherlight-image .PopupWrapper .Col {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  width: 65%;
+  padding-right: 20px;
+}
+.featherlight-image .PopupWrapper .Col img {
+  width: 100%;
+  min-width: 135px;
+  max-width: 226px;
+}
+.featherlight-image .PopupWrapper .Col.Right {
+  width: 35%;
+  text-align: right;
+}
+.featherlight-image .PopupWrapper .Col.Right img {
+  width: 100%;
+  min-width: 105px;
+  max-width: 120px;
+}
+.featherlight-image .PopupWrapper .ResultSection {
+  overflow: hidden;
+  background-color: #FFFFFF;
+  padding: 20px;
+}
+.featherlight-image .PopupWrapper .MessageSection {
+  background-color: #CCCCCC;
+  padding: 20px;
+}
+.featherlight-image .PopupWrapper .Action {
+  padding: 20px 0;
+  text-align: right;
+}
+.featherlight-image .PopupWrapper ul.Labels {
+  font-weight: bold;
+}
+.featherlight-image .PopupWrapper ul li {
+  margin-bottom: 10px;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Regular.ttf");
+}
+@font-face {
+  font-family: "Raleway Bold";
+  src: url("../fonts/Raleway-Bold.ttf");
+}
+.fontNormal, .featherlight .PopupWrapper .PopupMessage, .featherlight .PopupWrapper ul.Labels, .featherlight .PopupWrapper ul.Results, .featherlight-image .PopupWrapper .PopupMessage, .featherlight-image .PopupWrapper ul.Labels, .featherlight-image .PopupWrapper ul.Results, h1, p, .DefaultTypography, body, html {
+  -webkit-font-smoothing: antialiased;
+  font-family: Raleway, helvetica, arial;
+}
+
+.fontBold, .question-caption {
+  -webkit-font-smoothing: antialiased;
+  font-family: Raleway, helvetica, arial;
+}
+
+* {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  /* No support for these yet, use at own risk */
+  -o-user-select: none;
+  user-select: none;
+}
+
+h1 {
+  font-size: 1.6em;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  text-align: center;
+  font-weight: bold;
+}
+
+p {
+  font-size: 2em;
+  line-height: 2em;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 599px) {
+  p {
+    font-size: 1.2em;
+    line-height: 25px;
+    margin-bottom: 11px;
+  }
+}
+
+ol li {
+  font-size: 1.2em;
+  line-height: 1.5em;
+  margin-bottom: 1em;
+  list-style-type: decimal;
+  margin-left: 20px;
+}
+
+.DefaultTypography, body, html {
+  font-size: 15px;
+  font-weight: normal;
+  font-variant: normal;
+  font-style: normal;
+  color: white;
+}
+@media screen and (max-width: 599px) {
+  .DefaultTypography, body, html {
+    font-size: 12px;
+  }
+}
+
+body, html {
+  background-color: #fcb831;
+}
+
+.content-section {
+  padding-left: 2.5em;
+  padding-right: 3.5em;
+  overflow: scroll;
+  height: 100%;
+}
+.content-section .content-filler {
+  height: 200px;
+}
+.content-section .content-filler.longer {
+  height: 400px;
+}
+.content-section.full-width {
+  padding-left: 0;
+  padding-right: 0;
+  overflow: hidden;
+}
+.content-section.full-width.result-section {
+  overflow: scroll;
+}
+
+.question-image {
+  width: 100%;
+  border-bottom: 2px solid white;
+  height: auto;
+}
+.question-image img {
+  width: 100%;
+  display: block;
+}
+
+.question-caption {
+  font-size: 1.6em;
+  padding: .5em 2em .5em 2em;
+  text-align: center;
+  line-height: 1.3em;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+}
+
+.question-text {
+  font-size: 1.3em;
+  font-weight: lighter;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.answer-box {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  padding: 1em 5em 1em 5em;
+  margin-top: 1.5em;
+}
+.answer-box .answer.no {
+  float: left;
+}
+.answer-box .answer.yes {
+  float: right;
+}
+.answer-box .answer span {
+  display: block;
+  text-align: center;
+  font-size: 1.3em;
+  padding-top: .5em;
+  color: white;
+}
+.answer-box .answer a {
+  height: 77px;
+  display: block;
+  width: 76px;
+}
+.answer-box .answer a.no-answer {
+  background-image: url(../img/btn_no.png);
+  background-repeat: no-repeat;
+  background-size: 76px 77px;
+}
+.answer-box .answer a.no-answer:active {
+  background-image: url(../img/btn_no_active.png);
+}
+.answer-box .answer a.no-answer.chosen {
+  background-image: url(../img/btn_no_selected.png);
+}
+.answer-box .answer a.no-answer.chosen:active {
+  background-image: url(../img/btn_no_active.png);
+}
+.answer-box .answer a.yes-answer {
+  background-image: url(../img/btn_yes.png);
+  background-repeat: no-repeat;
+  background-size: 76px 77px;
+}
+.answer-box .answer a.yes-answer:active {
+  background-image: url(../img/btn_yes_active.png);
+}
+.answer-box .answer a.yes-answer.chosen {
+  background-image: url(../img/btn_yes_selected.png);
+}
+.answer-box .answer a.yes-answer.chosen:active {
+  background-image: url(../img/btn_yes_active.png);
+}
+
+.result-text {
+  font-size: 1.6em;
+  padding: 1.2em 4em 0 4em;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.3em;
+  font-weight: bold;
+}
+.result-text .negative-stats {
+  color: red;
+}
+.result-text .positive-stats {
+  color: green;
+}
+
+.result-image img {
+  width: 100%;
+  padding: 1em 6em 0 6em;
+}
+
+.result-description {
+  font-size: 1.2em;
+}
+.result-description p {
+  font-size: 1em;
+  line-height: 1.25em;
+  padding: 0 1.5em;
+  color: white;
+}
+.result-description p strong {
+  font-weight: bold;
+}
+.result-description ul li {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-bottom: 1em;
+  list-style-type: disc;
+  margin-left: 35px;
+}
+.result-description span {
+  padding: 0 1.7em;
+}
+.result-description span a {
+  font-size: 1.25em;
+  color: white;
+  font-weight: bold;
+}
+
+.contact-block {
+  margin-top: 1.5em;
+}
+.contact-block span {
+  font-size: 1.2em;
+  display: block;
+  text-align: center;
+  padding-bottom: .5em;
+}
+
+.phone-number {
+  bottom: 0;
+  height: 6.5em;
+  text-align: center;
+  width: 100%;
+  padding: 0 0 1em 0;
+}
+.phone-number .btn-white {
+  line-height: 3em;
+  font-size: 1.5em;
+}
+.phone-number .btn-white a {
+  color: #fcb831;
+}
+
+.back-button {
+  display: inline-block;
+  position: absolute;
+  width: 6em;
+  height: 6em;
+  margin-left: 1em;
+  margin-top: 1em;
+  z-index: 99999;
+  background-size: 55% 55%;
+  background-image: url(../img/backbutton.png);
+  background-repeat: no-repeat;
+}
+.back-button:active {
+  opacity: 0.6;
+}
+.back-button img {
+  width: 100%;
+}
+
+.btn-white {
+  background-color: white;
+  color: #fcb831;
+  -moz-border-radius: 40px / 40px;
+  -webkit-border-radius: 40px 40px;
+  border-radius: 40px / 40px;
+  line-height: 2em;
+  height: 3em;
+  display: inline-block;
+  padding: 0 20px;
+  width: 90%;
+}
+.btn-white:active {
+  color: #fcb831;
+  opacity: 0.6;
+}
+.btn-white.question-info {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+.btn-white.question-info:active {
+  background-color: #f8ba5b;
+}
+
+.lightbox {
+  display: none;
+}
+
+.PopTitle {
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.PopFooter {
+  color: white;
+  font-size: 1em;
+  text-align: center;
+  display: block;
+  margin-bottom: 100px;
+}
+
+.featherlight,
+.featherlight-image,
+.featherlight-image-content,
+.fcontrol,
+.featherlight-image-inner,
+.finner,
+.fcontrol,
+.magnify {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.magnify.plus,
+.magnify.minus {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.featherlight-image .featherlight-image-content {
+  width: 90%;
+  overflow: hidden;
+  height: 95%;
+  padding: 0;
+  border-bottom: 2px solid transparent;
+}
+.featherlight-image .featherlight-image-content .featherlight-image-inner {
+  display: block;
+  overflow: scroll;
+  height: 100%;
+}
+.featherlight-image .featherlight-image-content .finner img {
+  min-width: 730px;
+  max-width: 940px;
+}
+
+.featherlight .featherlight-content {
+  height: 80%;
+  padding: 0;
+  background-color: #fcb831;
+  z-index: 9999;
+  zoom: 1;
+  overflow: hidden;
+}
+.featherlight .featherlight-content .featherlight-inner {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+}
+.featherlight .featherlight-content p {
+  color: white;
+  line-height: 1.4em;
+}
+.featherlight .featherlight-content .popup-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  padding: 1em .5em 1em .5em;
+  position: relative;
+  width: 100%;
+  background-color: #fcb831;
+}
+.featherlight .featherlight-content .popup-container {
+  padding: 0 2em;
+  overflow: scroll;
+  height: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.featherlight .featherlight-content .inner-ol {
+  padding-top: 1em;
+}
+.featherlight .featherlight-content .inner-ol li {
+  list-style-type: lower-alpha;
+  font-size: 1em;
+}
+
+.custom-close-icon {
+  font-family: Arial, sans serif;
+  font-size: 1.5em;
+  color: white;
+  background: none;
+  position: absolute;
+  z-index: 9999;
+  display: inline-block;
+  cursor: pointer;
+  top: .5em;
+  right: .5em;
+}
+
+.featherlight .featherlight-close {
+  display: none;
+}
+
+.content-section-holder {
+  overflow: hidden;
+  height: 100%;
+}
+
+.fcontrol {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: black;
+  font-size: 2em;
+}
+.fcontrol .magnify {
+  width: 1.5em;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid orange;
+  background: white;
+  color: gray;
+  height: 1.2em;
+  line-height: 1.2em;
+  vertical-align: middle;
+  font-size: 1em;
+  font-weight: bold;
+}
+.fcontrol .magnify:active {
+  opacity: 0.3;
+}
+
+.featherlight-image .featherlight-image-close-icon {
+  line-height: 2em;
+  width: 2em;
+  font-size: 2em;
+  background: white;
+  color: gray;
+}
+.featherlight-image .featherlight-image-close-icon:active {
+  opacity: 0.3;
+}
+
+@media (max-height: 520px) {
+  .question-caption {
+    padding: .2em 2em .3em 2em;
+  }
+
+  .answer-box {
+    padding: 1em 5em 1em 5em;
+    margin-top: 0;
+  }
+
+  .question-image {
+    height: 220px;
+    overflow: hidden;
+  }
+}
+header {
+  height: 25px;
+  background-color: #e89920;
+}
+
+section.footer {
+  background-color: #f7ac39;
+  bottom: 0;
+  height: 6.5em;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  padding: 1em 0;
+  z-index: 99999;
+}
+section.footer .footer-button {
+  line-height: 3em;
+  font-size: 1.5em;
+}
+
+section.above-footer {
+  bottom: 7em;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  height: 4em;
+  line-height: 4em;
+}
+section.above-footer a.show-popup {
+  padding: 10px;
+  padding-right: 20px;
+  font-size: 1.5em;
+  color: white;
+  background-image: url(../img/icn_arrow.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 13px;
+}
+section.above-footer a.show-popup:after {
+  color: white;
+  right: inherit;
+}
+
+@media (max-height: 520px) {
+  section.footer {
+    height: 5.5em;
+    padding: 0.5em 0;
+  }
+}
+.hero-image {
+  width: 100%;
+}
+.hero-image img {
+  width: 100%;
+  padding: 0 40px;
+}
+
+.hero-text {
+  text-align: center;
+  color: white;
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 1.7em 0;
+  letter-spacing: .04em;
+}
+
+@media (max-height: 520px) {
+  .hero-text {
+    margin: 1.7em 0 0 0;
+  }
+}

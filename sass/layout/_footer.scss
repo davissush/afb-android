@@ -1,0 +1,54 @@
+section.footer{
+	background-color: $footerBackground;
+	bottom: 0;
+	height: 6.5em;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	padding: 1em 0;
+	z-index: 99999;
+
+	.footer-button{
+		line-height: $button-height;
+		font-size: 1.5em;
+	}
+}
+
+section.above-footer{
+	bottom: 7em;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	height: 4em;
+	line-height: 4em;
+
+	a.show-popup{
+		padding: 10px;
+		padding-right: 20px;
+		font-size: 1.5em;
+		color: white;
+		background: {
+			image: url(../img/icn_arrow.png);
+			repeat: no-repeat;
+			position: right center;
+			size: 13px;
+		}
+
+		&:hover{
+//			background-color: gray;
+		}
+
+		&:after{
+			color: white;
+			right:inherit;
+		}
+	}
+}
+
+
+@media(max-height: 520px) {
+	section.footer {
+		height: 5.5em;
+		padding: 0.5em 0;
+	}
+}

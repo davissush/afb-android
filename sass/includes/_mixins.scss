@@ -1,0 +1,40 @@
+$desktopSize: 1107px;
+$tabletSize: 600px;
+$mobileSize: 460px;
+
+@mixin desktop {
+	@media screen and (min-width: $desktopSize)  {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media screen and (min-width: $tabletSize) and (max-width: ($desktopSize - 1))  {
+		@content;
+	}
+}
+
+@mixin smallerThanDesktop {
+	@media screen and (max-width: ($desktopSize - 1))  {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media screen and (max-width: ($tabletSize - 1))  {
+		@content;
+	}
+}
+
+@mixin unselectable() {
+	@include user-select(none);
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+// Applies strong anti-alias effect to font
+@mixin smooth() {
+	text-shadow: 0 0 1px rgba(0,0,0,0.3);
+}
+
+$rounded-corner-amount: 40px;
+$button-height: 3em;

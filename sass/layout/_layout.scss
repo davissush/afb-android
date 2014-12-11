@@ -1,0 +1,557 @@
+@import '../includes/_fonts';
+
+@font-face {
+	font-family: "Raleway";
+	src: url('../fonts/Raleway-Regular.ttf');
+}
+
+@font-face {
+	font-family: "Raleway Bold";
+	src: url('../fonts/Raleway-Bold.ttf');
+}
+
+.fontNormal {
+	-webkit-font-smoothing: antialiased;
+	font-family: Raleway, helvetica, arial;
+}
+
+.fontBold {
+	-webkit-font-smoothing: antialiased;
+	font-family: Raleway, helvetica, arial;
+}
+* {
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	-moz-user-select: none;     /* Firefox all */
+	-ms-user-select: none;      /* IE 10+ */
+
+	/* No support for these yet, use at own risk */
+	-o-user-select: none;
+	user-select: none;
+}
+
+h1{
+	@extend .fontNormal;
+	font-size: 1.6em;
+	margin-top: 1.2em;
+	margin-bottom: 1.2em;
+	text-align: center;
+	font-weight: bold;
+
+//	@include mobile{
+//		font-size: 2.5em;
+//		line-height: 42px;
+//		margin-bottom: 5px;
+//	}
+}
+
+p{
+	@extend .fontNormal;
+	font-size: 2em;
+	line-height: 2em;
+	margin-bottom: 20px;
+
+	@include mobile{
+		font-size: 1.2em;
+		line-height: 25px;
+		margin-bottom: 11px;
+	}
+}
+
+ol li{
+	font-size: 1.2em;
+	line-height: 1.5em;
+	margin-bottom: 1em;
+	list-style-type: decimal;
+	margin-left: 20px;
+}
+
+
+.DefaultTypography {
+	font-size: 15px;
+	@extend .fontNormal;
+	font-weight: normal;
+	font-variant: normal;
+	font-style: normal;
+	color: $textColour;
+
+	@include mobile{
+		font-size: 12px;
+	}
+}
+
+body, html{
+	@extend .DefaultTypography;
+	background-color: $appBackground;
+}
+
+
+.container{
+
+}
+
+.content-section{
+	padding-left: 2.5em;
+	padding-right: 3.5em;
+	overflow: scroll;
+	height: 100%;
+
+	.content-filler{
+		height: 200px;
+
+		&.longer{
+			height: 400px;
+		}
+	}
+
+	&.full-width{
+		padding-left: 0;
+		padding-right: 0;
+		overflow: hidden;
+
+		&.result-section{
+			overflow: scroll;
+		}
+	}
+}
+
+.question-image{
+	width:100%;
+	border-bottom: 2px solid white;
+	height: auto;
+	img{
+		width: 100%;
+		display: block;
+	}
+}
+
+.question-caption{
+	@extend .fontBold;
+	font-size: 1.6em;
+	padding: .5em 2em .5em 2em;
+	text-align: center;
+	line-height: 1.3em;
+	font-weight: bold;
+	letter-spacing: 0.04em;
+}
+
+.question-text{
+	font-size: 1.3em;
+	font-weight: lighter;
+	text-align: center;
+	letter-spacing: 0.02em;
+}
+
+.answer-box{
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	padding: 1em 5em 1em 5em;
+	margin-top: 1.5em;
+
+	.answer{
+		&.no{
+			float:left;
+		}
+
+		&.yes{
+			float:right;
+		}
+
+		span{
+			display: block;
+			text-align: center;
+			font-size: 1.3em;
+			padding-top: .5em;
+				color: white;
+		}
+	}
+
+	.answer{
+		a{
+			height: 77px;
+			display: block;
+			width: 76px;
+
+			&.no-answer{
+				background : {
+					image: url(../img/btn_no.png);
+					repeat: no-repeat;
+					size: 76px 77px;
+				}
+
+				&:active{
+					background : {
+						image: url(../img/btn_no_active.png);
+					}
+				}
+
+				&.chosen{
+					background : {
+						image: url(../img/btn_no_selected.png);
+					}
+
+					&:active{
+						background : {
+							image: url(../img/btn_no_active.png);
+						}
+					}
+				}
+			}
+
+			&.yes-answer{
+				background : {
+					image: url(../img/btn_yes.png);
+					repeat: no-repeat;
+					size: 76px 77px;
+				}
+
+				&:active{
+					background : {
+						image: url(../img/btn_yes_active.png);
+					}
+				}
+
+				&.chosen{
+					background : {
+						image: url(../img/btn_yes_selected.png);
+					}
+
+					&:active{
+						background : {
+							image: url(../img/btn_yes_active.png);
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+.result-text{
+	font-size: 1.6em;
+	padding: 1.2em 4em 0 4em;
+	text-align: center;
+	font-weight: bold;
+	line-height: 1.3em;
+	font-weight: bold;
+
+	.negative-stats{
+		color: red;
+	}
+
+	.positive-stats{
+		color: green;
+	}
+}
+
+.result-image{
+	img{
+		width: 100%;
+		padding: 1em 6em 0 6em;
+	}
+}
+
+.result-description{
+	font-size: 1.2em;
+	p{
+		font-size: 1em;
+		line-height: 1.25em;
+		padding: 0 1.5em;
+		color: white;
+
+		strong{
+			font-weight: bold;
+		}
+	}
+
+	ul{
+		li{
+			font-size: 1em;
+			line-height: 1.5em;
+			margin-bottom: 1em;
+			list-style-type: disc;
+			margin-left: 35px;
+		}
+	}
+
+	span{
+		padding: 0 1.7em;
+		a{
+			font-size: 1.25em;
+			color:white;
+			font-weight: bold;
+		}
+	}
+}
+
+.contact-block{
+	margin-top: 1.5em;
+	span{
+		font-size: 1.2em;
+		display: block;
+		text-align: center;
+		padding-bottom: .5em;
+	}
+}
+
+.phone-number{
+	bottom: 0;
+	height: 6.5em;
+	text-align: center;
+	width: 100%;
+	padding: 0 0 1em 0;
+
+	.btn-white{
+		line-height: 3em;
+		font-size: 1.5em;
+		a{
+			color: $buttonText;
+		}
+	}
+}
+
+.back-button{
+	display: inline-block;
+	position: absolute;
+	width: 6em;
+	height: 6em;
+	margin-left: 1em;
+	margin-top: 1em;
+	z-index: 99999;
+	background: {
+		size: 55% 55%;
+		image: url(../img/backbutton.png);
+		repeat: no-repeat;
+	}
+
+	&:active{
+		opacity: 0.6;
+	}
+
+	img{
+		width: 100%;
+	}
+}
+
+
+.btn-white{
+	background-color: $textBackground;
+	color: $buttonText;
+	@include border-radius($rounded-corner-amount, $rounded-corner-amount);
+	line-height: 2em;
+	height: $button-height;
+	display: inline-block;
+	padding: 0 20px;
+	width: 90%;
+
+	&:active{
+		color: $buttonText;
+		opacity: 0.6;
+	}
+
+	&.question-info{
+		background-color: transparent;
+		color: #fff;
+		border: 1px solid #fff;
+
+		&:active{
+			background-color: #f8ba5b;
+		}
+	}
+
+}
+
+.lightbox{
+	display:none;
+}
+
+.PopTitle{
+	color: white;
+	font-size: 1.5em;
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.PopFooter{
+	color: white;
+	font-size: 1em;
+	text-align: center;
+	display: block;
+	margin-bottom: 100px;
+}
+
+.featherlight,
+.featherlight-image,
+.featherlight-image-content,
+.fcontrol,
+.featherlight-image-inner,
+.finner,
+.fcontrol,
+.magnify{
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+.magnify.plus,
+.magnify.minus{
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+
+.featherlight-image .featherlight-image-content{
+	width: 90%;
+	overflow: hidden;
+	height: 95%;
+	padding: 0;
+	border-bottom: 2px solid transparent;
+
+	.featherlight-image-inner{
+		display: block;
+		overflow: scroll;
+		height: 100%;
+	}
+
+	.finner{
+		img{
+			min-width: 730px;
+			max-width: 940px;
+		}
+	}
+}
+
+
+.featherlight .featherlight-content{
+	height: 80%;
+	padding: 0;
+	background-color: $appBackground;
+	z-index:9999;
+	zoom:1;
+	overflow: hidden;
+
+	.featherlight-inner{
+		width: 100%;
+		overflow: hidden;
+		height: 100%;
+	}
+
+	p{
+		color: white;
+		line-height: 1.4em;
+	}
+
+	.popup-title{
+		font-size: 1.5em;
+		font-weight: bold;
+		text-align: center;
+		padding: 1em .5em 1em .5em;
+		position:relative;
+		width: 100%;
+		background-color: $appBackground;
+	}
+
+	.popup-container{
+		padding: 0 2em;
+		overflow: scroll;
+		height: 100%;
+
+		@include box-sizing(border-box);
+	}
+
+	.inner-ol{
+		padding-top:1em;
+		li{
+			list-style-type: lower-alpha;
+			font-size:1em;
+		}
+	}
+
+}
+
+.custom-close-icon{
+	font-family: Arial, sans serif;
+	font-size: 1.5em;
+	color: white;
+	background: none;
+	position: absolute;
+	z-index: 9999;
+	display: inline-block;
+	cursor: pointer;
+	top: .5em;
+	right: .5em;
+}
+
+
+.featherlight .featherlight-close{
+	display: none;
+}
+
+.content-section-holder{
+	overflow: hidden;
+	height: 100%;
+}
+
+.fcontrol{
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	color: black;
+	font-size: 2em;
+
+	.magnify {
+		width: 1.5em;
+		display: inline-block;
+		text-align: center;
+		border: 1px solid orange;
+		background: white;
+		color: gray;
+		height: 1.2em;
+		line-height: 1.2em;
+		vertical-align: middle;
+		font-size: 1em;
+		font-weight: bold;
+
+		&:active{
+			opacity: 0.3;
+		}
+	}
+}
+
+.featherlight-image .featherlight-image-close-icon{
+	line-height: 2em;
+	width: 2em;
+	font-size: 2em;
+	background: rgba(255, 255, 255, 1);
+	color: gray;
+
+	&:active{
+		opacity: 0.3;
+	}
+}
+
+@media(max-height: 520px) {
+	.question-caption {
+		padding: .2em 2em .3em 2em;
+	}
+
+	.answer-box{
+		padding: 1em 5em 1em 5em;
+		margin-top: 0;
+	}
+
+	.question-image{
+		height: 220px;
+		overflow: hidden;
+	}
+}

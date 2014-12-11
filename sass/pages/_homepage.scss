@@ -1,0 +1,23 @@
+.hero-image{
+	width:100%;
+
+	img{
+		width: 100%;
+		padding: 0 40px;
+	}
+}
+
+.hero-text{
+	text-align: center;
+	color: white;
+	font-size: 2.5em;
+	font-weight: bold;
+	margin: 1.7em 0;
+	letter-spacing: .04em;
+}
+
+@media(max-height: 520px) {
+	.hero-text {
+		margin: 1.7em 0 0 0;
+	}
+}
