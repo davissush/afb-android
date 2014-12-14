@@ -28,7 +28,7 @@
         id        = "com.afb"
         version   = "1.0.0">
 
-    <name>AFB App</name>
+    <name>AFB App for Android</name>
 
     <description>
         A hybrid app for AFB
