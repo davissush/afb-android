@@ -25,20 +25,18 @@
 -->
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.android.afb"
+        id        = "com.afb"
         version   = "1.0.0">
 
-    <name>AFB App For Android</name>
+    <name>AFB App</name>
 
     <description>
-        A hybrid app for AFB (Android)
+        A hybrid app for AFB
     </description>
 
     <author href="http://www.sushmobile.co.nz" email="davis.dimalen@gmail.com">
         Davis Dimalen
     </author>
-
-    <preference name="permissions"                value="none"/>
 
     <!-- Customize your app and platform with the preference element. -->
     <preference name="phonegap-version"           value="3.6.3" />          <!-- all: current version of PhoneGap -->
@@ -65,28 +63,27 @@
     <!-- Plugins -->
 
     <!-- Core plugins -->
-    <gap:plugin name="org.apache.cordova.battery-status" />
-    <gap:plugin name="org.apache.cordova.camera" />
+    <!--<gap:plugin name="org.apache.cordova.battery-status" />-->
+    <!--<gap:plugin name="org.apache.cordova.camera" />-->
     <gap:plugin name="org.apache.cordova.media-capture" />
     <gap:plugin name="org.apache.cordova.console" />
-    <gap:plugin name="org.apache.cordova.contacts" />
+    <!--<gap:plugin name="org.apache.cordova.contacts" />-->
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="org.apache.cordova.device-motion" />
     <gap:plugin name="org.apache.cordova.device-orientation" />
     <gap:plugin name="org.apache.cordova.dialogs" />
-    <gap:plugin name="org.apache.cordova.file" />
-    <gap:plugin name="org.apache.cordova.file-transfer" />
-    <gap:plugin name="org.apache.cordova.geolocation" />
+    <!--<gap:plugin name="org.apache.cordova.file" />-->
+    <!--<gap:plugin name="org.apache.cordova.file-transfer" />-->
+    <!--<gap:plugin name="org.apache.cordova.geolocation" />-->
     <gap:plugin name="org.apache.cordova.globalization" />
     <gap:plugin name="org.apache.cordova.inappbrowser" />
-    <gap:plugin name="org.apache.cordova.media" />
+    <!--<gap:plugin name="org.apache.cordova.media" />-->
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
-    <gap:plugin name="org.apache.cordova.vibration" />
+    <!--<gap:plugin name="org.apache.cordova.vibration" />-->
     <gap:plugin name="com.phonegap.plugins.childbrowser" version="5.0.0" />
     <gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" />
 
-	
     <icon src="icon.png" />
     <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
     <icon src="res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:qualifier="hdpi" />
@@ -107,6 +104,7 @@
     <gap:splash src="res/screen/ios/splash@2x.png"      gap:platform="ios"     width="640" height="1136" />
     <gap:splash src="res/screen/ios/splash@3x.png"      gap:platform="ios"     width="768" height="1024" />
 
+    <preference name="permissions" value="none"/>
     <preference name="SplashScreen" value="splash" />
     <preference name="SplashScreenDelay" value="3000" />
 
