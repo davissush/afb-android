@@ -73,6 +73,7 @@ route();
 
         var IsLoading = false;
 
+
         $('mathys').entwine(function($){
 
                 $('*').entwine({
@@ -115,7 +116,7 @@ route();
                                var imgfile = $(this).data('imgfile');
 
                                var popupImage = "<div>" +
-                                       "<div class='finner'>" +
+                                       "<div class='finner' id='img-popup'>" +
                                        "   <img src='img/" + imgfile + "'>" +
                                        "</div>" +
                                        "</div>";
@@ -127,6 +128,33 @@ route();
                                 });
 
                                 $('.featherlight-image-content').append("<div class='fcontrol'><span class='magnify plus'>+</span> <span class='magnify minus'>-</span></div>");
+                        }
+                });
+
+
+                $('.featherlight-image').entwine({
+                        onadd: function(){
+                                var myElement = document.getElementById('img-popup');
+
+                                var hammertime = new Hammer(myElement);
+
+                                hammertime.get('pinch').set({ enable: true });
+
+                                hammertime.on('pinchin', function(ev) {
+                                        //var imgwidth = this.closest('.featherlight-image-content').find('.featherlight-image-inner img').width();
+                                        var imgwidth = $('#img-popup').find('img').width();
+                                        imgwidth-=20;
+
+                                        $('#img-popup').find('img').width(imgwidth);
+                                });
+
+                                hammertime.on('pinchout', function(ev) {
+                                        //var imgwidth = this.closest('.featherlight-image-content').find('.featherlight-image-inner img').width();
+                                        var imgwidth = $('#img-popup').find('img').width();
+                                        imgwidth+=20;
+
+                                        $('#img-popup').find('img').width(imgwidth);
+                                });
                         }
                 });
 
