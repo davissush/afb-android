@@ -426,7 +426,7 @@ body, html{
 	.finner{
 		img{
 			min-width: 730px;
-			max-width: 940px;
+			max-width: 1200px;
 		}
 	}
 }
@@ -503,24 +503,30 @@ body, html{
 }
 
 .fcontrol{
+	width: 100%;
 	position: absolute;
-	bottom: 20px;
-	right: 20px;
+	bottom: 0;
 	color: black;
 	font-size: 2em;
 
+	.plus{
+		float:left;
+	}
+
+	.minus{
+		float:right;
+	}
+
 	.magnify {
-		width: 1.5em;
+		width: 2.5em;
 		display: inline-block;
 		text-align: center;
-		border: 1px solid orange;
 		background: white;
 		color: gray;
-		height: 1.2em;
-		line-height: 1.2em;
+		height: 1em;
+		line-height: 1em;
 		vertical-align: middle;
-		font-size: 1em;
-		font-weight: bold;
+		font-size: 2em;
 
 		&:active{
 			opacity: 0.3;
@@ -538,6 +544,54 @@ body, html{
 	&:active{
 		opacity: 0.3;
 	}
+}
+
+.QImage{
+	width: 100%;
+	position: relative;
+
+	img{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+}
+
+.block-type{
+	display: block;
+	margin-top: 10px;
+}
+
+.DisclaimerSection {
+	margin-top: 25px;
+	font-size: 1.2em;
+	line-height: 1.5em;
+}
+
+.popup-actions{
+	position: absolute;
+	bottom: -10px;
+	display: block;
+	width: 100%;
+	background: #fcb831;
+	height: 3.5em;
+
+	.popup-action{
+		display: inline-block;
+		width: 100px;
+		font-size: 3.5em;
+		height: 100%;
+		text-align: center;
+
+		&.left{
+			float:left;
+		}
+
+		&.right{
+			float:right;
+		}
+	}
+
+
 }
 
 @media(max-height: 520px) {

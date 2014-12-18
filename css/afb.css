@@ -779,7 +779,7 @@ body, html {
 }
 .featherlight-image .featherlight-image-content .finner img {
   min-width: 730px;
-  max-width: 940px;
+  max-width: 1200px;
 }
 
 .featherlight .featherlight-content {
@@ -847,24 +847,28 @@ body, html {
 }
 
 .fcontrol {
+  width: 100%;
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 0;
   color: black;
   font-size: 2em;
 }
+.fcontrol .plus {
+  float: left;
+}
+.fcontrol .minus {
+  float: right;
+}
 .fcontrol .magnify {
-  width: 1.5em;
+  width: 2.5em;
   display: inline-block;
   text-align: center;
-  border: 1px solid orange;
   background: white;
   color: gray;
-  height: 1.2em;
-  line-height: 1.2em;
+  height: 1em;
+  line-height: 1em;
   vertical-align: middle;
-  font-size: 1em;
-  font-weight: bold;
+  font-size: 2em;
 }
 .fcontrol .magnify:active {
   opacity: 0.3;
@@ -879,6 +883,48 @@ body, html {
 }
 .featherlight-image .featherlight-image-close-icon:active {
   opacity: 0.3;
+}
+
+.QImage {
+  width: 100%;
+  position: relative;
+}
+.QImage img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.block-type {
+  display: block;
+  margin-top: 10px;
+}
+
+.DisclaimerSection {
+  margin-top: 25px;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
+.popup-actions {
+  position: absolute;
+  bottom: -10px;
+  display: block;
+  width: 100%;
+  background: #fcb831;
+  height: 3.5em;
+}
+.popup-actions .popup-action {
+  display: inline-block;
+  width: 100px;
+  font-size: 3.5em;
+  height: 100%;
+  text-align: center;
+}
+.popup-actions .popup-action.left {
+  float: left;
+}
+.popup-actions .popup-action.right {
+  float: right;
 }
 
 @media (max-height: 520px) {

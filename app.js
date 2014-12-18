@@ -73,7 +73,6 @@ route();
 
         var IsLoading = false;
 
-
         $('mathys').entwine(function($){
 
                 $('*').entwine({
@@ -134,27 +133,31 @@ route();
 
                 $('.featherlight-image').entwine({
                         onadd: function(){
-                                var myElement = document.getElementById('img-popup');
-
-                                var hammertime = new Hammer(myElement);
-
-                                hammertime.get('pinch').set({ enable: true });
-
-                                hammertime.on('pinchin', function(ev) {
-                                        //var imgwidth = this.closest('.featherlight-image-content').find('.featherlight-image-inner img').width();
-                                        var imgwidth = $('#img-popup').find('img').width();
-                                        imgwidth-=20;
-
-                                        $('#img-popup').find('img').width(imgwidth);
-                                });
-
-                                hammertime.on('pinchout', function(ev) {
-                                        //var imgwidth = this.closest('.featherlight-image-content').find('.featherlight-image-inner img').width();
-                                        var imgwidth = $('#img-popup').find('img').width();
-                                        imgwidth+=20;
-
-                                        $('#img-popup').find('img').width(imgwidth);
-                                });
+//                                var myElement = document.getElementById('img-popup');
+//
+//                                var hammertime = new Hammer(myElement);
+//
+//                                hammertime.get('pinch').set({ enable: true });
+//
+//                                hammertime.on('pinchin', function(ev) {
+//                                        //var imgwidth = this.closest('.featherlight-image-content').find('.featherlight-image-inner img').width();
+//                                        var imgwidth = $('#img-popup').find('img').width();
+//                                        imgwidth-=20;
+//
+//                                        $('#img-popup').find('img').width(imgwidth);
+//                                });
+//
+//                                hammertime.on('pan', function(ev) {
+//
+//                                });
+//
+//                                hammertime.on('pinchout', function(ev) {
+//                                        //var imgwidth = this.closest('.featherlight-image-content').find('.featherlight-image-inner img').width();
+//                                        var imgwidth = $('#img-popup').find('img').width();
+//                                        imgwidth+=20;
+//
+//                                        $('#img-popup').find('img').width(imgwidth);
+//                                });
                         }
                 });
 
@@ -173,6 +176,20 @@ route();
                         }
                 });
 
+                $('.magnify2.plus').entwine({
+                        onclick: function(e){
+                                e.preventDefault();
+                                var imgwidth = this.closest('.QImage').find('img').width();
+                                imgwidth+=20;
+
+                                this.closest('.QImage').find('img').width(imgwidth);
+
+                                this.blur();
+
+                                return false;
+                        }
+                });
+
                 $('.magnify.minus').entwine({
                         onclick: function(e){
                                 var imgwidth = this.closest('.featherlight-image-content').find('.featherlight-image-inner img').width();
@@ -186,8 +203,34 @@ route();
                         }
                 });
 
-                $(".magnify.plus").on("touchend", function(){ return false; });
-                $(".magnify.minus").on("touchend", function(){ return false; });
+                $('.magnify2.minus').entwine({
+                        onclick: function(e){
+                                e.preventDefault();
+                                var imgwidth = this.closest('.QImage').find('img').width();
+                                imgwidth-=20;
+
+                                this.closest('.QImage').find('img').width(imgwidth);
+
+                                this.blur();
+
+                                return false;
+                        }
+                });
+
+                $(".popup-action.left").entwine({
+                        onclick: function(){
+                                $('.featherlight-content .popup-container').css('font-size', '1.6em');
+                        }
+                });
+
+                $(".popup-action.right").entwine({
+                        onclick: function(){
+                                $('.featherlight-content .popup-container').css('font-size', '1em');
+                        }
+                });
+
+//                $(".magnify.plus").on("touchend", function(){ return false; });
+//                $(".magnify.minus").on("touchend", function(){ return false; });
 
                 $('.result-section').entwine({
                         onadd: function(){
@@ -208,7 +251,7 @@ route();
                                         score_message =  "<p><strong>You now have a number of options available to you. You could:</strong></p>";
                                         score_message += "<ul>";
                                         score_message += "<li>Do nothing (not recommended unless you know what has caused the symptoms you observed).</li>";
-                                        score_message += "<li>You could send samples away for further analysis (see the AFB website above for instructions on how to do this).</li>";
+                                        score_message += "<li>You could send samples away for further analysis (see the AFB website below for instructions on how to do this). <span class='block-type'><a href='#' class='open-browser'>www.bee.crowna.co.nz</a></span></li>";
                                         score_message += "<li>You could step up the frequency of your AFB checks.</li>";
                                         score_message += "<li>You could ask for assistance in checking your hives from an experienced beekeeper.</li>";
                                         score_message += "<li>You could quarantine the hives and associated equipment for up to 18 months to ensure that an infection is not present at a “subclinical” level.</li>";
@@ -378,6 +421,12 @@ route();
                                         "    </ol>" +
                                         "    <div class='PopFooter'></div>" +
                                         "  </div>" +
+                                        "  <div class='popup-actions'>" +
+                                        "     <div class='popup-action left'>+" +
+                                        "     </div>" +
+                                        "     <div class='popup-action right'>-" +
+                                        "     </div>" +
+                                        "  </div>" +
                                         "</div>";
 
 
@@ -389,7 +438,7 @@ route();
                                         "     <li>Hold the frame by the lugs at either end of the top bar and turn it upside down.</li>" +
                                         "     <li>Position the sun or a source of artificial light behind you so that it shines into the cells.</li>" +
                                         "     <li>Manipulate the frame up and down so that you can clearly see the base or the content, of the cells.</li>" +
-                                        "     <li>If any cell has failed to hatch, while the others around it have, it should uncapped and the larva exposed.</li>" +
+                                        "     <li>If any cell has failed to hatch, while the others around it have, it should be uncapped and the larva exposed.</li>" +
                                         "     <li>The cap can easily be removed by scraping it away with your hive tool or a dry grass stalk.</li>" +
                                         "     <li>Once exposed the larva needs to be closely examined (return to the main App for instructions on how to do this and what to look for).</li>" +
                                         "     <li>Closely examine any larva that appears to have died and “collapsed” on to the bottom wall of the cell.  Dead larva can range from white to coffee brown in colour.</li>" +
@@ -426,6 +475,10 @@ route();
                                         "     <li>Look for the thin hair like structure that is the remains of the tongue in pupal scale.</li>" +
                                         "     <li>The red stick in the photo below is inserted in a cell and shows the correct angle between eye and frame.</li>" +
                                         "  </ol>" +
+                                        "  <div class='QImage'>" +
+                                        "     <img src='img/q4image.png'>" +
+                                        "     <img src='img/q4image_zoomed.png'>" +
+                                        "  </div>" +
                                         "  <div class='PopFooter'></div>" +
                                         "</div>" +
                                         "</div>";
