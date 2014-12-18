@@ -911,12 +911,12 @@ body, html {
   display: block;
   width: 100%;
   background: #fcb831;
-  height: 3.5em;
+  height: 4em;
 }
 .popup-actions .popup-action {
   display: inline-block;
   width: 100px;
-  font-size: 3.5em;
+  font-size: 4em;
   line-height: 1.2em;
   height: 100%;
   text-align: center;
