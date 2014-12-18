@@ -870,10 +870,10 @@ body, html {
   vertical-align: middle;
   font-size: 2em;
 }
-.fcontrol .magnify.plus:active {
+.fcontrol a.plus:active {
   opacity: 0.3;
 }
-.fcontrol .magnify.minus:active {
+.fcontrol a.minus:active {
   opacity: 0.3;
 }
 
