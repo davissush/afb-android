@@ -445,6 +445,12 @@ route();
                                         "  </ol>" +
                                         "  <div class='PopFooter'></div>" +
                                         "</div>" +
+                                        "  <div class='popup-actions'>" +
+                                        "     <div class='popup-action left'>+" +
+                                        "     </div>" +
+                                        "     <div class='popup-action right'>-" +
+                                        "     </div>" +
+                                        "  </div>" +
                                         "</div>";
 
 
@@ -461,6 +467,12 @@ route();
                                         "  </ol>" +
                                         "  <div class='PopFooter'></div>" +
                                         "</div>" +
+                                        "  <div class='popup-actions'>" +
+                                        "     <div class='popup-action left'>+" +
+                                        "     </div>" +
+                                        "     <div class='popup-action right'>-" +
+                                        "     </div>" +
+                                        "  </div>" +
                                         "</div>";
 
                                 var info4 = "<div>" +
@@ -481,6 +493,12 @@ route();
                                         "  </div>" +
                                         "  <div class='PopFooter'></div>" +
                                         "</div>" +
+                                        "  <div class='popup-actions'>" +
+                                        "     <div class='popup-action left'>+" +
+                                        "     </div>" +
+                                        "     <div class='popup-action right'>-" +
+                                        "     </div>" +
+                                        "  </div>" +
                                         "</div>";
 
                                 switch(infonum){
