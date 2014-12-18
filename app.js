@@ -126,7 +126,7 @@ route();
                                         closeOnClick: false
                                 });
 
-                                $('.featherlight-image-content').append("<div class='fcontrol'><span class='magnify plus'>-</span> <span class='magnify minus'>+</span></div>");
+                                $('.featherlight-image-content').append("<div class='fcontrol'><a href='#' class='magnify plus'>-</a> <a href='#' class='magnify minus'>+</a></div>");
                         }
                 });
 
