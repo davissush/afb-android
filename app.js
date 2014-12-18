@@ -126,7 +126,7 @@ route();
                                         closeOnClick: false
                                 });
 
-                                $('.featherlight-image-content').append("<div class='fcontrol'><span class='magnify plus'>+</span> <span class='magnify minus'>-</span></div>");
+                                $('.featherlight-image-content').append("<div class='fcontrol'><span class='magnify plus'>-</span> <span class='magnify minus'>+</span></div>");
                         }
                 });
 
@@ -166,7 +166,7 @@ route();
                         onclick: function(e){
                                 e.preventDefault();
                                var imgwidth = this.closest('.featherlight-image-content').find('.featherlight-image-inner img').width();
-                               imgwidth+=20;
+                               imgwidth-=20;
 
                                this.closest('.featherlight-image-content').find('.featherlight-image-inner img').width(imgwidth);
 
@@ -180,7 +180,7 @@ route();
                         onclick: function(e){
                                 e.preventDefault();
                                 var imgwidth = this.closest('.QImage').find('img').width();
-                                imgwidth+=20;
+                                imgwidth-=20;
 
                                 this.closest('.QImage').find('img').width(imgwidth);
 
@@ -193,7 +193,7 @@ route();
                 $('.magnify.minus').entwine({
                         onclick: function(e){
                                 var imgwidth = this.closest('.featherlight-image-content').find('.featherlight-image-inner img').width();
-                                imgwidth-=20;
+                                imgwidth+=20;
 
                                 this.closest('.featherlight-image-content').find('.featherlight-image-inner img').width(imgwidth);
 
@@ -207,7 +207,7 @@ route();
                         onclick: function(e){
                                 e.preventDefault();
                                 var imgwidth = this.closest('.QImage').find('img').width();
-                                imgwidth-=20;
+                                imgwidth+=20;
 
                                 this.closest('.QImage').find('img').width(imgwidth);
 
@@ -219,13 +219,13 @@ route();
 
                 $(".popup-action.left").entwine({
                         onclick: function(){
-                                $('.featherlight-content .popup-container').css('font-size', '1.6em');
+                                $('.featherlight-content .popup-container').css('font-size', '1em');
                         }
                 });
 
                 $(".popup-action.right").entwine({
                         onclick: function(){
-                                $('.featherlight-content .popup-container').css('font-size', '1em');
+                                $('.featherlight-content .popup-container').css('font-size', '1.6em');
                         }
                 });
 
@@ -422,9 +422,9 @@ route();
                                         "    <div class='PopFooter'></div>" +
                                         "  </div>" +
                                         "  <div class='popup-actions'>" +
-                                        "     <div class='popup-action left'>+" +
+                                        "     <div class='popup-action left'>-" +
                                         "     </div>" +
-                                        "     <div class='popup-action right'>-" +
+                                        "     <div class='popup-action right'>+" +
                                         "     </div>" +
                                         "  </div>" +
                                         "</div>";
@@ -446,9 +446,9 @@ route();
                                         "  <div class='PopFooter'></div>" +
                                         "</div>" +
                                         "  <div class='popup-actions'>" +
-                                        "     <div class='popup-action left'>+" +
+                                        "     <div class='popup-action left'>-" +
                                         "     </div>" +
-                                        "     <div class='popup-action right'>-" +
+                                        "     <div class='popup-action right'>+" +
                                         "     </div>" +
                                         "  </div>" +
                                         "</div>";
@@ -468,9 +468,9 @@ route();
                                         "  <div class='PopFooter'></div>" +
                                         "</div>" +
                                         "  <div class='popup-actions'>" +
-                                        "     <div class='popup-action left'>+" +
+                                        "     <div class='popup-action left'>-" +
                                         "     </div>" +
-                                        "     <div class='popup-action right'>-" +
+                                        "     <div class='popup-action right'>+" +
                                         "     </div>" +
                                         "  </div>" +
                                         "</div>";
@@ -494,9 +494,9 @@ route();
                                         "  <div class='PopFooter'></div>" +
                                         "</div>" +
                                         "  <div class='popup-actions'>" +
-                                        "     <div class='popup-action left'>+" +
+                                        "     <div class='popup-action left'>-" +
                                         "     </div>" +
-                                        "     <div class='popup-action right'>-" +
+                                        "     <div class='popup-action right'>+" +
                                         "     </div>" +
                                         "  </div>" +
                                         "</div>";
