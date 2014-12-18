@@ -170,7 +170,7 @@ route();
 
                                this.closest('.featherlight-image-content').find('.featherlight-image-inner img').width(imgwidth);
 
-                               this.blur();
+//                               this.blur();
 
                                return false;
                         }
@@ -197,7 +197,7 @@ route();
 
                                 this.closest('.featherlight-image-content').find('.featherlight-image-inner img').width(imgwidth);
 
-                                this.blur();
+//                                this.blur();
 
                                 return false;
                         }
