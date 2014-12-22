@@ -217,15 +217,36 @@ route();
                         }
                 });
 
+
+                var smallestFont = $('#content-holder2').css('font-size');
+                var biggestFont = $('#content-holder3').css('font-size');
+
+                var smallestFontIn = parseInt(smallestFont.substr(0,2))-2;
+                var biggestFontIn = parseInt(biggestFont.substr(0,2));
+
                 $(".popup-action.left").entwine({
                         onclick: function(){
-                                $('.featherlight-content .popup-container').css('font-size', '1em');
+                                var fontSize = $('.featherlight-content .popup-container').css('font-size');
+
+                                currentFontSize = parseInt(fontSize.substr(0,2));
+
+                                if(currentFontSize > smallestFontIn){
+                                        currentFontSize = parseInt(fontSize.substr(0,2))-4;
+                                        $('.featherlight-content .popup-container').css('font-size', currentFontSize+'px');
+                                }
                         }
                 });
 
                 $(".popup-action.right").entwine({
                         onclick: function(){
-                                $('.featherlight-content .popup-container').css('font-size', '1.6em');
+                                var fontSize = $('.featherlight-content .popup-container').css('font-size');
+
+                                currentFontSize = parseInt(fontSize.substr(0,2));
+
+                                if(currentFontSize < biggestFontIn){
+                                        currentFontSize = parseInt(fontSize.substr(0,2))+4;
+                                        $('.featherlight-content .popup-container').css('font-size', currentFontSize+'px');
+                                }
                         }
                 });
 
@@ -415,7 +436,7 @@ route();
                                         "               <li>That the cell cappings are flat or domed and not sunken.</li>" +
                                         "            </ol>" +
                                         "       </li>" +
-                                        "       <li>If any cell displays one or more of the above symptoms, it should uncapped and the larva exposed.</li>" +
+                                        "       <li>If any cell displays one or more of the above symptoms, it should be uncapped and the larva exposed.</li>" +
                                         "       <li>The cap can easily be removed by scraping it away with your hive tool or a dry grass stalk.</li>" +
                                         "       <li>Once exposed the larva needs to be closely examined (return to the main App for instructions on how to do this and what to look for).</li>" +
                                         "    </ol>" +

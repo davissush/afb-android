@@ -506,6 +506,9 @@ body, html {
   overflow: scroll;
   height: 100%;
 }
+.content-section ol li {
+  font-size: 1.7em;
+}
 .content-section .content-filler {
   height: 200px;
 }
@@ -737,6 +740,16 @@ body, html {
   margin-bottom: 100px;
 }
 
+#content-holder2 {
+  display: none;
+  font-size: 1.2em;
+}
+
+#content-holder3 {
+  display: none;
+  font-size: 1.7em;
+}
+
 .featherlight,
 .featherlight-image,
 .featherlight-image-content,
@@ -904,7 +917,7 @@ body, html {
 
 .DisclaimerSection {
   margin-top: 25px;
-  font-size: 1.2em;
+  font-size: 1.7em;
   line-height: 1.5em;
 }
 
