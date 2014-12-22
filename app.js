@@ -221,8 +221,8 @@ route();
                 var smallestFont = $('#content-holder2').css('font-size');
                 var biggestFont = $('#content-holder3').css('font-size');
 
-                var smallestFontIn = parseInt(smallestFont.substr(0,2))-2;
-                var biggestFontIn = parseInt(biggestFont.substr(0,2));
+                smallestFontIn = parseInt(smallestFont.substr(0,2))-2;
+                biggestFontIn = parseInt(biggestFont.substr(0,2));
 
                 $(".popup-action.left").entwine({
                         onclick: function(){
