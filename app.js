@@ -364,7 +364,7 @@ route();
                                 var popupContent = "<div>" +
                                         "  <div class='popup-title'>About Us  <a href='#' class='custom-close-icon'>✕</a></div>" +
                                         "  <div class='popup-container'>" +
-                                        "<p>This application was funded by the Management Agency, American Foulbrood National Pest Management Paln, to assist New Zealand beekeepers in the eradication of American Foulbrood.</p>" +
+                                        "<p>This application was funded by the Management Agency, American Foulbrood National Pest Management Plan, to assist New Zealand beekeepers in the eradication of American Foulbrood.</p>" +
                                         "<p>The Application was created for the Management Agency by Brice Horner (BSc), Apiculture Tutor, Otago.</p>" +
                                         "<p>Photos were generously provided by Frank Lindsay (Lindsay's Apiaries) and Brice Horner.</p>" +
                                         "<p>Rex Baynes<br/>(Manager AFB, NPMP)</p>" +
