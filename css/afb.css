@@ -661,6 +661,9 @@ body, html {
   text-align: center;
   padding-bottom: .5em;
 }
+.contact-block .contact-imphasis {
+  font-size: 1.5em;
+}
 
 .phone-number {
   bottom: 0;
@@ -674,7 +677,7 @@ body, html {
   font-size: 1.5em;
 }
 .phone-number .btn-white a {
-  color: #fcb831;
+  color: #FCB831;
 }
 
 .back-button {
@@ -698,7 +701,7 @@ body, html {
 
 .btn-white {
   background-color: white;
-  color: #fcb831;
+  color: #FCB831;
   -moz-border-radius: 40px / 40px;
   -webkit-border-radius: 40px 40px;
   border-radius: 40px / 40px;
@@ -709,7 +712,7 @@ body, html {
   width: 90%;
 }
 .btn-white:active {
-  color: #fcb831;
+  color: #FCB831;
   opacity: 0.6;
 }
 .btn-white.question-info {
@@ -965,7 +968,7 @@ header {
 }
 
 section.footer {
-  background-color: #f7ac39;
+  background-color: #F7AC39;
   bottom: 0;
   height: 6.5em;
   position: absolute;
