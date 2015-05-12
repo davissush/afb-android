@@ -265,14 +265,14 @@ route();
                                 if(parseInt(totalscore)  >= 30){
                                         score_response = "<span class='negative-stats'>Very likely</span> to have an AFB infection";
                                         score_message = "<p>In this case it is recommended that you burn the hive and report the outbreak.<br/> Instructions on how to do this can be found on the AFB Management Agency website.</p>";
-                                        score_message += "<span><a href='#' class='open-browser'>www.bee.crowna.co.nz</a></span>";
+                                        score_message += "<span><a href='#' class='open-browser'>www.afb.org.nz</a></span>";
                                         score_image += "<img src='img/negative_result.png'>";
                                 } else {
                                         score_response = "<span class='positive-stats'>Unlikely</span> to have AFB";
                                         score_message =  "<p><strong>You now have a number of options available to you. You could:</strong></p>";
                                         score_message += "<ul>";
                                         score_message += "<li>Do nothing (not recommended unless you know what has caused the symptoms you observed).</li>";
-                                        score_message += "<li>You could send samples away for further analysis (see the AFB website below for instructions on how to do this). <span class='block-type'><a href='#' class='open-browser'>www.bee.crowna.co.nz</a></span></li>";
+                                        score_message += "<li>You could send samples away for further analysis (see the AFB website below for instructions on how to do this). <span class='block-type'><a href='#' class='open-browser'>www.afb.org.nz</a></span></li>";
                                         score_message += "<li>You could step up the frequency of your AFB checks.</li>";
                                         score_message += "<li>You could ask for assistance in checking your hives from an experienced beekeeper.</li>";
                                         score_message += "<li>You could quarantine the hives and associated equipment for up to 18 months to ensure that an infection is not present at a “subclinical” level.</li>";
@@ -293,7 +293,7 @@ route();
                         onclick: function(e){
                                 e.preventDefault();
 
-                                window.open('http://www.bee.crowna.co.nz', '_system');
+                                window.open('http://www.afb.org.nz', '_system');
                         }
                 });
 
